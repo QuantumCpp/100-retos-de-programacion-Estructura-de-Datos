@@ -24,7 +24,6 @@ Una colección completa de desafíos de programación organizados por niveles de
   - [Geometría Computacional](#geometría-computacional)
   - [Estructuras para Big Data](#estructuras-para-big-data)
   - [Problemas Extremos](#problemas-extremos)
-- [Guía de Uso](#guía-de-uso)
 - [Contribuir](#contribuir)
 
 ---
