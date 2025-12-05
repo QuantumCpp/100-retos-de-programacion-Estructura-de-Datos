@@ -368,57 +368,7 @@ Una colección completa de desafíos de programación organizados por niveles de
 
 100. **Base de Datos en Memoria**  
      Diseñar un sistema completo de base de datos en memoria con índices múltiples, transacciones ACID y recuperación ante fallos
-
 ---
-
-## 📖 Guía de Uso
-
-### Recomendaciones Generales
-
-- **Progresión gradual**: Comienza por el nivel medio y avanza conforme domines cada nivel
-- **Testing**: Implementa pruebas unitarias exhaustivas para cada estructura
-- **Análisis de complejidad**: Calcula y documenta la complejidad temporal y espacial
-- **Optimización**: Primero logra una versión funcional, luego optimiza
-- **Teoría primero**: Estudia la teoría y casos de uso antes de implementar estructuras avanzadas
-
-### Estructura Sugerida para Cada Reto
-
-```markdown
-## Reto #X: [Nombre]
-
-### Descripción
-[Explicación del problema]
-
-### Requisitos
-- Funcionalidad 1
-- Funcionalidad 2
-- Funcionalidad 3
-
-### Complejidad Esperada
-- Tiempo: O(?)
-- Espacio: O(?)
-
-### Tests
-- Caso 1: ...
-- Caso 2: ...
-- Caso borde: ...
-```
-
-### Recursos Adicionales
-
-- **Libros recomendados**:
-  - "Introduction to Algorithms" (CLRS)
-  - "The Algorithm Design Manual" (Skiena)
-  - "Advanced Data Structures" (Brass)
-
-- **Plataformas de práctica**:
-  - LeetCode
-  - HackerRank
-  - Codeforces
-  - AtCoder
-
----
-
 ## 🤝 Contribuir
 
 Si deseas agregar más retos o mejorar los existentes:
@@ -432,13 +382,8 @@ Si deseas agregar más retos o mejorar los existentes:
 ---
 
 ## 📝 Licencia
-
 Este proyecto está bajo la licencia MIT. Siéntete libre de usar, modificar y distribuir este contenido.
-
 ---
-
 ## ⭐ Agradecimientos
-
 Gracias a la comunidad de programadores que constantemente busca mejorar sus habilidades y compartir conocimiento.
-
 **¡Feliz coding! 💻🚀**
