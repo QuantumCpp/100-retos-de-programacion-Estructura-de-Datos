@@ -40,7 +40,10 @@ struct Arbol{
   Arbol(int valor){
     Raiz = new Nodo(valor);
   }
-  
+
+  ~Arbol(){
+    DestruirRecursivamente(Raiz);
+  }
 
   void InsertarValor(int valor){
     Raiz = InsertarRecursivamente(valor, Raiz);
@@ -56,36 +59,42 @@ struct Arbol{
   }
 
   private:
+    
+    void DestruirRecursivamente(Nodo* nodo){
+      if(nodo != nullptr){
+        DestruirRecursivamente(nodo->HijoDerecho);
+        DestruirRecursivamente(nodo->HijoIzquierdo);
+        delete nodo;
+      }
 
-    bool ExplorarRecursivamente(int valor, Nodo*& NodoExplorador){
+    }     
+    
+    bool ExplorarRecursivamente(int valor, Nodo* NodoExplorador){
       if(NodoExplorador == nullptr){
         return false;
       }
-      else{
-        if (NodoExplorador->valor == valor){
-          return true;
-        }
-        else{
-          if (valor > NodoExplorador->valor){
-           return ExplorarRecursivamente(valor, NodoExplorador->HijoDerecho);
-          }
-          if (valor < NodoExplorador->valor){
-           return ExplorarRecursivamente(valor, NodoExplorador->HijoIzquierdo);
-          }
-        }
+      if(NodoExplorador->valor == valor){
+        return true;
       }
+      if(valor > NodoExplorador->valor){
+        return ExplorarRecursivamente(valor, NodoExplorador->HijoDerecho);
+      }
+      if(valor<NodoExplorador->valor){
+        return ExplorarRecursivamente(valor, NodoExplorador->HijoIzquierdo);
+      }
+      return false;
     }
 
-    Nodo* InsertarRecursivamente(int nuevoValor, Nodo* NodoNuevo){
+    Nodo* InsertarRecursivamente(int nuevoValor, Nodo*& NodoNuevo){
       if(NodoNuevo == nullptr){
         NodoNuevo = new Nodo(nuevoValor);
       }
       else{
         if(nuevoValor > NodoNuevo->valor){
-          NodoNuevo->HijoDerecho = InsertarRecursivamente(nuevoValor, NodoNuevo->HijoDerecho);
+          InsertarRecursivamente(nuevoValor, NodoNuevo->HijoDerecho);
         }
         else if(nuevoValor < NodoNuevo->valor){
-          NodoNuevo->HijoIzquierdo = InsertarRecursivamente(nuevoValor, NodoNuevo->HijoIzquierdo);
+          InsertarRecursivamente(nuevoValor, NodoNuevo->HijoIzquierdo);
         }
         else{
           std::cout<<"Valor no valido o repetido";
@@ -98,6 +107,7 @@ struct Arbol{
 int main(){
   Arbol arbolito(5);
   arbolito.InsertarValor(7);
+  arbolito.BuscarValor(7);
   std::cout<<"Todo funcionando por ahora";
   return 0;
 }
